@@ -4,8 +4,8 @@ if (true) {
     // Line A
 }
 
-   //Answer: 
-
+   //Answer: window
+   //This is bound to the global object. 
 
 //2) What is the value of this at line B when obj.staticFunction() is executed? Why?
 
@@ -21,8 +21,8 @@ if (true) {
 
 	obj.staticFunction();
 
-   //Answer: 
-
+   //Answer: obj
+   //This is bound to the object(obj), because the function was called on the object.
 
 //3) What is the value of this at line C? Why?
 
@@ -34,8 +34,8 @@ if (true) {
 	var myFun = obj.myMethod;
 	myFun();
 
-	//Answer: 
-
+	//Answer: window
+	//The value of this at line C is bound to the global(window) object, because it was not called on an object.
 
 //4) What is the value of this at line D? Why?
 
@@ -49,8 +49,9 @@ if (true) {
 	};
 	obj.myMethod();
 
-	//Answer: 
-	
+	//Answer: window
+	//This one was tricky. When evaluating the eval code, this is obj. However, in the eval code, myFun is 
+	//not called on an object, so ThisBinding is set to window for the call.
 
 //5) What is the value of this at line E?
 
@@ -62,4 +63,6 @@ if (true) {
 	};
 	myFun.call(obj);
 
-	//Answer:
+	//Answer: obj
+	//The line myFun.call(obj); is invoking the special built-in function Function.prototype.call(), 
+	//which accepts thisArg as the first argument.
