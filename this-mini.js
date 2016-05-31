@@ -46,6 +46,12 @@ sally.returnName = returnName;
 sally.returnName();
 
 
+//Write a function that takes both joe and sally as parameters and returns the difference in their ages.
+function ageDiff(joe, sally) {
+	return sally.age - joe.age;
+}
+
+
 
 //Make a constructor function called Pet that will create an object with a name property, a species property, and a color property.
 //Add a method called log on your constructor that will console.log the pet's name, species, and color.
@@ -110,4 +116,4 @@ function shopping() {
 }
 
 //Invoke the getCart method and console.log the response.
-//Invoke the addToCart method, passing in an item as argument.
+//Invoke the addToCart method, passing in an item as an argument.
